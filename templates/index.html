@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <h1>To do list</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class ="container">
+    <form method="POST"> <input type="Text" name = "Task" placeholder="Enter your task">
+       
+        <button type="submit">submit</button>
+    </form>
+</div>
+<div class = "Lists">
+   <h1>Tasks </h1>
+   <h3>Not Started</h3>
+      <ul>
+    {% for Task in profiles %}
+    {% if Task.Status == "Not started" %}
+    <li>{{Task.Task}}</li>
+    {% endif %}
+    {% endfor %}
+   </ul>
+   <h3>On Progress</h3>
+      <ul>
+    {% for Task in profiles %}
+   {% if Task.Status == "On progress" %}
+    <li>{{Task.Task}}</li>
+    {% endif %}
+    {% endfor %}
+   </ul>
+   <h3>Completed</h3>
+      <ul>
+    {% for Task in profiles %}
+    {% if Task.Status == "Completed" %}
+    <li>{{Task.Task}}</li>
+    {% endif %}
+    {% endfor %}
+   </ul>
+  
+</div>
+<div>
+    <button onclick="location.href='Manage.html'">Manage Taks</button>
+</div>
+</body>
+</html>

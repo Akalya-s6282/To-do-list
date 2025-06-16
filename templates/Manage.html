@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <h1>To do list</h1>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src = "{{url_for('static',filename='js/script.js')}}"></script>
+</head>
+<body>
+<div class = "Lists">
+   <h1>Tasks </h1>
+  <table>
+         <thead>
+            <th>Id</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>#</th>
+         </thead>
+         {% for data in profiles %}
+         <tbody>
+            <td>{{loop.index}}</td>
+                <form id="form-{{ data.id }}" method="POST" action="/update/{{ data.id }}">
+                    <td> <input id="taskInput-{{ data.id }}"  type="Text" name = "Task" value="{{ data.Task }}"></td>
+
+                        <td>
+                            <select id="statusSelect-{{ data.id }}" name="Status">
+                                <option value="Not started" {% if data.Status == "Not started" %}selected{% endif %}>Not started</option>
+                                <option value="On progress" {% if data.Status == "On progress" %}selected{% endif %}>On progress</option>
+                                <option value="Completed" {% if data.Status == "Completed" %}selected{% endif %}>Completed</option>
+                            </select>
+                        </td>
+                        <td><button class="Update" id="trash" name="function" value="delete" type="submit"><i class="bi bi-trash3"></i></button></td>
+                        <td><button class="Update" id="submitBtn-{{ data.id }}"  name="function" value="Save" type="submit"><i class="bi bi-box-arrow-up"></i></button></td>
+                    </form>
+            </tbody>
+         {% endfor%}
+      </table>
+</div>
+<div>
+    <button onclick="location.href='/clear/'"type="submit">Clear All</button>
+    <button onclick="location.href='/'"type="submit">Done</button>
+</div>
+</body>
+</html>
