@@ -9,8 +9,8 @@ def update(id):
     Progress = request.form.get("Status")
     task = Profile.query.get_or_404(id)
     data = Profile.query.get(id)
-    data.Task = Task
-    data.Status = Progress
+    data.task = Task
+    data.status = Progress
     if(Function=="delete"):
        db.session.delete(task) 
     db.session.commit()

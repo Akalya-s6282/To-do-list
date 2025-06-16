@@ -15,9 +15,9 @@ app.register_blueprint(clear_bp)
 @app.route("/", methods=['GET','POST'])
 def index():
     if request.method=="POST":
-        Task = request.form.get("Task")
-        Progress =  "Not started"
-        p = Profile(Task=Task, Status=Progress)
+        task = request.form.get("Task")
+        progress =  "Not started"
+        p = Profile(task=task, status=progress)
         db.session.add(p)
         db.session.commit()
     profiles = Profile.query.all()

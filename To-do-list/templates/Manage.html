@@ -24,13 +24,13 @@
          <tbody>
             <td>{{loop.index}}</td>
                 <form id="form-{{ data.id }}" method="POST" action="/update/{{ data.id }}">
-                    <td> <input id="taskInput-{{ data.id }}"  type="Text" name = "Task" value="{{ data.Task }}"></td>
+                    <td> <input id="taskInput-{{ data.id }}"  type="Text" name = "Task" value="{{ data.task }}"></td>
 
                         <td>
                             <select id="statusSelect-{{ data.id }}" name="Status">
-                                <option value="Not started" {% if data.Status == "Not started" %}selected{% endif %}>Not started</option>
-                                <option value="On progress" {% if data.Status == "On progress" %}selected{% endif %}>On progress</option>
-                                <option value="Completed" {% if data.Status == "Completed" %}selected{% endif %}>Completed</option>
+                                <option value="Not started" {% if data.status == "Not started" %}selected{% endif %}>Not started</option>
+                                <option value="On progress" {% if data.status == "On progress" %}selected{% endif %}>On progress</option>
+                                <option value="Completed" {% if data.status == "Completed" %}selected{% endif %}>Completed</option>
                             </select>
                         </td>
                         <td><button class="Update" id="trash" name="function" value="delete" type="submit"><i class="bi bi-trash3"></i></button></td>
