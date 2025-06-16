@@ -1,9 +1,9 @@
 body {
-  /*background-image: url('To-do.jpg');
+  background-image: url('To-do.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;*/
-  font-family: Arial, sans-serif;
+    background-position: center;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   margin: 35px;
   padding: auto;
@@ -11,12 +11,14 @@ body {
   max-height: max-content;
   width: auto;
 }
-h1 {
+h1,h2 {
+  font-family: "Georgia", Times, serif;
+  font-size: 45px;
   text-align: center;
   text-decoration: dashed;
 }
 .container {
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   background: rgba(237, 60, 95, 0.5);
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,7 +32,8 @@ h1 {
   width: auto;
 }
 .Lists {
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
   background: rgba(237, 60, 95, 0.5);
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,40 +49,40 @@ h1 {
   width: auto;
 }
 button {
-  font-family: Arial, sans-serif;
-  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
   margin-block: 30px;
   padding: 10px 20px;
-  background-color: rgba(153, 147, 242, 0.75);
+  background-color: rgba(171, 113, 225, 0.75);
   color: rgb(39, 15, 61);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 input {
-  font-family: Arial, sans-serif;
-  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
   margin-block: 30px;
   padding: 10px 20px;
-  background-color: rgba(242, 236, 147, 0.75);
+  background-color: rgba(248, 243, 169, 0.75);
   color: rgb(39, 15, 61);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 select {
-  font-family: Arial, sans-serif;
-  font-size: medium;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
   margin-block: 30px;
   padding: 10px 20px;
-  background-color: rgba(242, 236, 147, 0.75);
+  background-color: rgba(173, 255, 169, 0.75);
   color: rgb(39, 15, 61);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .Update {
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 35p;
   margin-block: 30px;
   padding: 5px 10px;
@@ -88,4 +91,15 @@ select {
   border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
+}
+#Title
+{
+  font-family: "Georgia", Times, serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
 }
