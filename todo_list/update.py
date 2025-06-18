@@ -1,7 +1,6 @@
 from flask import Blueprint, redirect, request
 
 from .db import db
-#from . import db
 from .models import Todo
 
 update_bp = Blueprint('update_bp', __name__)
@@ -17,15 +16,6 @@ def update(id):
     if(Function=="delete"):
        db.session.delete(task) 
     db.session.commit()
-    #return render_template("Manage.html",profiles=profiles )
     return redirect('/Manage.html')
 
 
-"""
-Yo
-Why now Uv sync
-Now 
-
-models.py ba
-
-"""

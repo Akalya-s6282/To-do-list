@@ -1,8 +1,5 @@
-
-
 from flask import Flask, render_template, request
 
-# these
 from .clear import clear_bp
 from .db import db
 from .manage import manage_bp
@@ -29,7 +26,6 @@ def create_app():
     with app.app_context():
         db.create_all() 
     
-    # okay the imports 
     @app.route("/", methods=['GET','POST'])
     def index():
         if request.method=="POST":
